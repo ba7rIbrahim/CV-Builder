@@ -1,5 +1,5 @@
 import "./App.css";
-import FormPage from "./pages/form-page";
+import MainFormPage from "./pages/form-page";
 import WelcomePage from "./pages/welcome-page";
 import { useUIStore } from "./store/uiStore";
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       {componentVisible === "welcomePage" && <WelcomePage />}
-      {componentVisible === "formPage" && <FormPage />}
+      {componentVisible === "formPage" && <MainFormPage />}
     </>
   );
 }

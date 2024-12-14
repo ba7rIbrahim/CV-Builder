@@ -1,8 +1,8 @@
 import { Button } from "antd";
 import { useUIStore } from "../store/uiStore";
+import ToggleLanguagesButtons from "../components/toogle-languages-btns";
 
 const WelcomePage = () => {
-  const { currentLanguage, toggleLanguage } = useUIStore();
   const { toggleComponent } = useUIStore();
 
   return (
@@ -21,25 +21,10 @@ const WelcomePage = () => {
       <p className="text-paragraphColor mt-3 lg:mt-5 text-base lg:text-lg">
         Chose the language of your cv content:
       </p>
-      <div className="mb-12 mt-4 lg:mb-16">
-        <Button
-          type={currentLanguage === "english" ? "primary" : "default"}
-          className="rounded-none"
-          onClick={toggleLanguage}
-        >
-          English
-        </Button>
-        <Button
-          type={currentLanguage === "arabic" ? "primary" : "default"}
-          className="rounded-none"
-          onClick={toggleLanguage}
-        >
-          Arabic
-        </Button>
-      </div>
+      <ToggleLanguagesButtons />
       <Button
         type="primary"
-        className="rounded-full w-[170px] p-5 shadow-lg text-lg "
+        className="rounded-full w-[170px] p-5 shadow-lg text-lg"
         onClick={toggleComponent}
       >
         Let's Start
