@@ -12,7 +12,7 @@ const WelcomePage = () => {
       </h1>
       <div className="lg:h-[450px]">
         <img
-          src="src/assets/welcome.svg"
+          src="/public/assets/welcome.svg"
           alt="welcome"
           className="h-full w-full"
         />
