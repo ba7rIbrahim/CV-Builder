@@ -1,6 +1,6 @@
 import { Button } from "antd";
 import { useUIStore } from "../store/uiStore";
-import ToggleLanguagesButtons from "../components/toogle-languages-btns";
+import ToggleLanguagesButtons from "../components/toggle-languages-btns";
 
 const WelcomePage = () => {
   const { toggleComponent } = useUIStore();
@@ -12,9 +12,10 @@ const WelcomePage = () => {
       </h1>
       <div className="lg:h-[450px]">
         <img
-          src="/public/assets/welcome.svg"
-          alt="welcome"
+          src="https://cv-builder-gamma.vercel.app/static/media/welcome.2b69a3e1.svg"
           className="h-full w-full"
+          loading="lazy"
+          alt="welcome"
         />
       </div>
 
