@@ -7,9 +7,9 @@ export default {
     extend: {
       container: {
         center: true,
+        padding: "15px",
       },
       colors: {
-        background: "#f8f9fa",
         main: "#1890ff",
         border: "#d9d9d9",
         paragraphColor: "#000000D9",
