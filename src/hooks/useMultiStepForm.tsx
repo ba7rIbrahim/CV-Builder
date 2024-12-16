@@ -4,10 +4,10 @@ const useMultiStepForm = (steps: ReactElement[]) => {
   const [currentStep, setCurrentStep] = useState(0);
 
   const nextStep = () => {
-    if (currentStep < steps.length - 1) setCurrentStep(currentStep + 1);
+    setCurrentStep((prev) => (prev < steps.length - 1 ? prev + 1 : prev));
   };
   const previousStep = () => {
-    if (currentStep >= 0) setCurrentStep(currentStep - 1);
+    setCurrentStep((prev) => (prev > 0 ? prev - 1 : prev));
   };
   const goToStep = (step: number) => {
     setCurrentStep(step);
