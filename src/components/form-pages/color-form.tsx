@@ -5,6 +5,7 @@ const ColorForm = () => {
     <FormWrapper title="Color">
       <>
         {/* <SketchPicker /> */}
+        <h1>Color Image </h1>
       </>
     </FormWrapper>
   );
