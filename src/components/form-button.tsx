@@ -6,6 +6,7 @@ interface FormButtonProps {
   previousStep: () => void;
   isFirstStep: boolean;
   isLastStep: boolean;
+  validateForm: () => Promise<Record<string, string>>
 }
 
 const FormButtons = ({
@@ -13,6 +14,7 @@ const FormButtons = ({
   previousStep,
   isFirstStep,
   isLastStep,
+  validateForm,
 }: FormButtonProps) => {
   const { toggleComponent } = useUIStore();
   return (
@@ -29,9 +31,20 @@ const FormButtons = ({
       </Button>
       <Button
         type="primary"
+        htmlType="submit"
         className="rounded-sm"
         onClick={() => {
-          nextStep();
+          validateForm()
+            .then((errors) => {
+              if (Object.keys(errors).length === 0) {
+                nextStep();
+              } else {
+                console.log("Validation errors:", errors);
+              }
+            })
+            .catch((error: unknown) => {
+              console.error("An error occurred during validation:", error);
+            });
         }}
       >
         {!isLastStep ? "Next" : "Finish"}
